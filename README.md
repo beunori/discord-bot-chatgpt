@@ -54,12 +54,18 @@ yarn start
 
 O bot estará online e pronto para responder a comandos slash no servidor Discord associado ao `GUILD_ID`.
 
+
 ## 🔧 Comandos Slash
 
-O bot possui o seguinte comando slash disponível:
+O bot possui os seguintes comandos slash disponíveis:
 
 - `/chatgpt` - Gera uma resposta usando o modelo GPT-3.5-turbo da OpenAI. O usuário deve fornecer uma mensagem como entrada.
+- `/docs` - Acesse a documentação da tecnologia. O usuário pode escolher entre diferentes linguagens e receber os links relevantes.
+- `/git` - Consulta informações sobre um repositório do GitHub. O usuário deve fornecer o nome do usuário e o nome do repositório como entrada.
+- `/ping` - Verifica a latência do bot ao servidor Discord.
+- `/playlist` - Gerencia uma playlist de músicas. O usuário pode adicionar, remover e listar músicas na playlist.
 
+Agora, o bot possui um conjunto completo de comandos slash para atender às necessidades dos usuários. Sinta-se à vontade para adicionar mais comandos ou melhorar o bot ainda mais! 🚀
 ## ⏳ Limites de Taxa
 
 O bot implementa um mecanismo de limitação de taxa para evitar atingir os limites da API da OpenAI e do Discord. Os limites de taxa são os seguintes:
