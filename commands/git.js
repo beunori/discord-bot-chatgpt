@@ -1,15 +1,15 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js")
+const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
-// inside a command, event listener, etc.
+// Cria um novo objeto EmbedBuilder para montar a mensagem de embed
 const exampleEmbed = new EmbedBuilder()
-    .setColor("Orange")
-    .setTitle('Comandos do Git')
-    .setURL('https://discord.js.org/')
-    .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
-    .setDescription('Some description here')
-    .setThumbnail('https://i.imgur.com/AfFp7pu.png')
-    .addFields(
-        { name: '$ git init [nome-do-projeto]', value: 'Cria um novo repositório local com um nome especificado', inline: true },
+	.setColor("#FF5733")
+	.setTitle('Comandos do Git')
+	.setURL('https://discord.js.org/')
+	.setAuthor({ name: 'GitHUB', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
+	.setDescription('Alguns comandos úteis do Git:')
+	.setThumbnail('https://i.imgur.com/AfFp7pu.png')
+	.addFields(
+		{ name: '$ git init [nome-do-projeto]', value: 'Cria um novo repositório local com um nome especificado', inline: true },
 		{ name: '$ git clone [url]', value: 'Baixa um projeto e seu histórico de versão inteiro', inline: true },
 		{ name: '$ git stash', value: 'Armazena temporariamente todos os arquivos monitorados modificados', inline: true },
 		{ name: '\u200B', value: '\u200B' },
@@ -24,15 +24,14 @@ const exampleEmbed = new EmbedBuilder()
 		{ name: '$ git merge [nome-branch]', value: 'Combina o histórico da branch especificada a branch atual', inline: true },
 		{ name: '$ git push [alias] [branch]', value: 'Envia todos os commits do branch local para o GitHub', inline: true },
 		{ name: '$ git pull', value: 'Baixa o histórico e incorpora as mudanças', inline: true },
-	)
-
+	);
 
 module.exports = {
-    data: new SlashCommandBuilder()
-        .setName("git")
-        .setDescription("relembrar comandos do git"),
+	data: new SlashCommandBuilder()
+		.setName("git")
+		.setDescription("Relembrar comandos do Git"),
 
-    async execute(interaction) {
-        await interaction.reply({ embeds: [exampleEmbed] })
-    }
-}
+	async execute(interaction) {
+		await interaction.reply({ embeds: [exampleEmbed] });
+	}
+};

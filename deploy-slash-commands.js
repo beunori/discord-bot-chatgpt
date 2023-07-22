@@ -2,7 +2,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const fs = require('fs');
 const path = require('path');
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, Interaction } = require('discord.js');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -18,12 +18,11 @@ for (const file of commandFiles) {
     commands.push(command.data.toJSON());
 }
 
-// Implementa os comandos slash no Discord
+const rest = new REST({ version: '9' }).setToken(TOKEN);
+
 (async () => {
     try {
         console.log('Iniciando a atualização dos comandos de aplicação (/).');
-
-        const rest = new REST({ version: '9' }).setToken(TOKEN);
 
         await rest.put(
             Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
@@ -38,14 +37,36 @@ for (const file of commandFiles) {
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
-// Evento interactionCreate para lidar com os comandos slash
+
+// Evento interactionCreate para lidar com os comandos slash e com os componentes
 client.on('interactionCreate', async (interaction) => {
-    if (!interaction.isCommand()) return;
+    if (!interaction.isCommand() && !interaction.isStringSelectMenu()) return;
 
     const { commandName } = interaction;
 
+    // Aqui você pode adicionar novos comandos ao verificar o nome do comando
+
     if (commandName === 'chatgpt') {
         const command = require(path.join(commandsPath, 'chatgpt.js'));
+        command.execute(interaction);
+
+    } else if (commandName === 'docs') {
+        const command = require(path.join(commandsPath, 'docs.js'));
+        command.execute(interaction);
+
+    } else if (commandName === 'git') {
+        const command = require(path.join(commandsPath, 'git.js'));
+        command.execute(interaction);
+
+    } else if (commandName === 'ping') {
+        const command = require(path.join(commandsPath, 'ping.js'));
+        command.execute(interaction);
+
+    } else if (commandName === 'playlist') {
+        const command = require(path.join(commandsPath, 'playlist.js'));
+        command.execute(interaction);
+    } else if (commandName === 'playlist') {
+        const command = require(path.join(commandsPath, 'apagar.js'));
         command.execute(interaction);
     }
 });
