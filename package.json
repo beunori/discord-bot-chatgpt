@@ -12,8 +12,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "bot de discord"
+  "keywords": ["discord", "bot", "AI", "chatbot", "GPT-3.5", "machine learning"],
+  "author": "beunori",
+  "license": "MIT",
+  "description": "Um bot para Discord que utiliza a API ChatGPT da OpenAI para gerar respostas inteligentes e interativas.",
 }
