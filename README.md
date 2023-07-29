@@ -65,28 +65,25 @@ O bot possui os seguintes comandos slash disponíveis:
 - `/ping` - Verifica a latência do bot ao servidor Discord.
 - `/playlist` - Gerencia uma playlist de músicas. O usuário pode adicionar, remover e listar músicas na playlist.
 
-Agora, o bot possui um conjunto completo de comandos slash para atender às necessidades dos usuários. Sinta-se à vontade para adicionar mais comandos ou melhorar o bot ainda mais! 🚀
+Agora, o bot possui um conjunto completo de comandos slash para atender às necessidades dos usuários. Sinta-se à vontade para adicionar mais comandos ou melhorar o bot.
 ## ⏳ Limites de Taxa
 
 O bot implementa um mecanismo de limitação de taxa para evitar atingir os limites da API da OpenAI e do Discord. Os limites de taxa são os seguintes:
 
 - OpenAI API:
+  - 200 RPD (Requisições por Dia)
   - 3 RPM (Requisições por Minuto)
-  - 40.000 TPM (Requisições por Minuto)
 
-- Discord Slash Commands (Bots em Desenvolvimento):
-  - 200 RPD (Requisições por Hora)
-  - 5 RPM (Requisições por Minuto)
+- Discord Slash Commands Global Rate:
+  - 50 RPS (Requisições por Segundo)
+  - 10000 por 10 minutos RPM (Requisições por Minuto)
 
-- Discord Slash Commands (Bots Públicos):
-  - 2000 RPD (Requisições por Hora)
-  - 50 RPM (Requisições por Minuto)
 
 O bot implementa um mecanismo de espera exponencial para lidar com limites de taxa excedidos.
 
 ## 🤝 Contribuindo
 
-Se você quiser contribuir para este projeto, fique à vontade para abrir uma issue ou enviar um pull request. Vamos adorar receber contribuições para melhorar o bot!
+Se você quiser contribuir para este projeto, fique à vontade para abrir uma issue ou enviar um pull request. Adoraria receber contribuições para melhorar o bot!
 
 ## 📄 Licença
 
