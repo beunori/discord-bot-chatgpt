@@ -76,7 +76,7 @@ O bot implementa um mecanismo de limitação de taxa para evitar atingir os limi
 
 - Discord Slash Commands Global Rate:
   - 50 RPS (Requisições por Segundo)
-  - 10000 por 10 minutos RPM (Requisições por Minuto)
+  - 10000 por 10 minutos
 
 
 O bot implementa um mecanismo de espera exponencial para lidar com limites de taxa excedidos.
